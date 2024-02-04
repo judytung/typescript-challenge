@@ -11,7 +11,7 @@
  * 輸入: { firstName: 'John', lastName: 'Doe' }
  * 輸出: 'John Doe'
  */
-interface User {
+type User = {
     firstName: string,
     lastName: string
 }
