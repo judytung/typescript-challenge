@@ -6,4 +6,20 @@
  */
 
 // 請在下方寫下你的程式碼
+type responseObj = {
+    id: number,
+    title: string
+}
 
+export async function fetchData(url: string) {
+    return new Promise((resolve, reject) => {
+        try {
+            fetch(url).then((res) => {
+                const data = res.json() as unknown as responseObj
+                resolve(data);
+            })
+        } catch (error) {
+            reject(error);
+        }
+    })
+}
